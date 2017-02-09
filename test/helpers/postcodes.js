@@ -10,7 +10,7 @@ const inputFile = path.resolve(path.dirname(require.resolve('postcode')), 'tests
 
 const _postcodes = [];
 
-module.exports = class PostcodeLoader = {
+module.exports = class PostcodeLoader {
   static load(callback) {
     if (_postcodes.length) {
       return callback(null, _postcodes);
