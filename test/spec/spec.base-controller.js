@@ -8,7 +8,7 @@ const FormError = require('../../lib/base-error');
 const _ = require('lodash');
 const EventEmitter = require('events').EventEmitter;
 
-describe.only('Form Controller', () => {
+describe('Form Controller', () => {
 
   beforeEach(() => {
     sinon.spy(EventEmitter.prototype, 'emit');
