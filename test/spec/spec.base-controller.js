@@ -241,7 +241,6 @@ describe('Form Controller', () => {
       };
       cb = sinon.stub();
       sinon.spy(form, '_filterFields');
-      sinon.stub(form, 'filterFields').yields();
     });
 
     it('is called as part of `get` pipeline', () => {
@@ -252,11 +251,6 @@ describe('Form Controller', () => {
     it('is called as part of `post` pipeline', () => {
       form.post(req, res, cb);
       form._filterFields.should.have.been.calledOnce.and.calledWith(req, res);
-    });
-
-    it('calls through to form.filterFields', () => {
-      form._filterFields(req, res, cb);
-      form.filterFields.should.have.been.calledOnce.and.calledWith(req, res, cb);
     });
 
     it('filters fields if useWhen is provided and not satisfied', () => {
